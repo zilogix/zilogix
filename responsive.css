@@ -1,0 +1,499 @@
+/* ==========================================
+   LARGE DESKTOPS / 4K
+========================================== */
+
+@media (min-width:1800px){
+
+  .hero{
+    max-width:1800px;
+    margin:auto;
+  }
+
+  .hero h1{
+    font-size:10rem;
+  }
+
+  .showcase-card{
+    max-width:1600px;
+  }
+
+  .section{
+    max-width:1600px;
+  }
+
+}
+
+
+/* ==========================================
+   LAPTOPS
+========================================== */
+
+@media (max-width:1400px){
+
+  .hero h1{
+    font-size:7rem;
+  }
+
+  .showcase-content{
+    padding:60px;
+  }
+
+}
+
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:1024px){
+
+  .navbar{
+    padding:18px 25px;
+  }
+
+  .desktop-nav{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .menu-toggle span{
+
+    width:24px;
+    height:2px;
+
+    background:#fff;
+
+    transition:.4s;
+  }
+
+  .menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2){
+    opacity:0;
+  }
+
+  .menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+  }
+
+  .hero{
+    padding:140px 35px 100px;
+  }
+
+  .hero h1{
+    font-size:5.5rem;
+    letter-spacing:-4px;
+  }
+
+  .hero p{
+    font-size:1.15rem;
+  }
+
+  .section{
+    padding:130px 35px;
+  }
+
+  .showcase-card{
+
+    grid-template-columns:1fr;
+    height:auto;
+  }
+
+  .showcase-image{
+    height:420px;
+  }
+
+  .showcase-content{
+    padding:50px;
+  }
+
+  .showcase-content h3{
+    font-size:3rem;
+  }
+
+  .showcase-index{
+    font-size:4rem;
+  }
+
+  .sticky-card-container{
+    height:auto;
+    min-height:100vh;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+  .hero{
+    padding:130px 24px 80px;
+  }
+
+  .hero h1{
+
+    font-size:3.8rem;
+
+    line-height:.95;
+
+    letter-spacing:-3px;
+  }
+
+  .hero p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+  }
+
+  .hero-buttons{
+
+    flex-direction:column;
+    width:100%;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .section{
+    padding:110px 24px;
+  }
+
+  .section-header h2,
+  .section-title h2{
+
+    font-size:2.8rem;
+
+    letter-spacing:-2px;
+  }
+
+  .about-content p{
+    font-size:1.05rem;
+  }
+
+  .sticky-card-container{
+
+    padding:20px;
+    top:90px;
+  }
+
+  .showcase-card{
+
+    width:100%;
+    border-radius:24px;
+  }
+
+ .showcase-image{
+
+    height:280px;
+    overflow:hidden;
+}
+
+.showcase-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+}
+
+  .showcase-content{
+    padding:32px;
+  }
+
+  .showcase-index{
+    font-size:3rem;
+  }
+
+  .showcase-content h3{
+    font-size:2.3rem;
+    letter-spacing:-1px;
+  }
+
+  .showcase-content p{
+    font-size:1rem;
+  }
+
+  .contact{
+    padding-top:150px;
+    padding-bottom:150px;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+  .navbar{
+    padding:16px 18px;
+  }
+
+ .logo{
+
+    display:flex;
+    align-items:center;
+
+}
+
+.logo img{
+
+    height:42px;
+    width:auto;
+
+    display:block;
+
+}
+
+  .hero{
+    padding:120px 18px 70px;
+  }
+
+  .hero h1{
+
+    font-size:3rem;
+
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:.95rem;
+  }
+
+  .section{
+    padding:90px 18px;
+  }
+
+  .section-header h2,
+  .section-title h2{
+    font-size:2.2rem;
+  }
+
+  .showcase-image{
+    height:260px;
+  }
+
+  .showcase-content{
+    padding:24px;
+  }
+
+  .showcase-content h3{
+    font-size:2rem;
+  }
+
+  .showcase-index{
+    font-size:2.5rem;
+  }
+
+  .footer{
+    padding:60px 18px;
+  }
+
+}
+
+
+/* ==========================================
+   320PX DEVICES
+========================================== */
+
+@media (max-width:360px){
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .hero p{
+    font-size:.9rem;
+  }
+
+  .showcase-content h3{
+    font-size:1.8rem;
+  }
+
+}
+
+
+/* ==========================================
+   LANDSCAPE PHONES
+========================================== */
+
+@media (max-height:600px){
+
+  .hero{
+    min-height:auto;
+    padding-top:140px;
+    padding-bottom:80px;
+  }
+
+  .sticky-card-container{
+    position:relative;
+    top:0;
+  }
+
+}
+
+
+/* ==========================================
+   TOUCH DEVICES
+========================================== */
+
+@media (hover:none){
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .desktop-nav a:hover{
+
+    transform:none;
+    box-shadow:none;
+  }
+
+  .showcase-card:hover img{
+    transform:none;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+@media (max-width:1024px){
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    .navbar{
+        padding:18px 20px;
+    }
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:768px){
+    .logo img{
+
+        height:30px;
+
+    }
+
+    .footer-logo img{
+        height:45px;
+    }
+
+    .contact h2{
+        font-size:2.5rem !important;
+        line-height:1.1;
+    }
+
+    .contact-links a{
+        font-size:1rem;
+        word-break:break-word;
+    }
+
+    .showcase-card{
+        grid-template-columns:1fr;
+        height:auto;
+    }
+
+    .showcase-image{
+        height:280px;
+        overflow:hidden;
+    }
+
+    .showcase-image img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center;
+    }
+
+    .hero h1{
+        font-size:3.8rem;
+        letter-spacing:-2px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .footer-logo img{
+        height:38px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .showcase-image{
+        height:240px;
+    }
+
+    .contact h2{
+        font-size:2rem !important;
+    }
+
+    .contact-links a{
+        font-size:.9rem;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCE MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
+}
