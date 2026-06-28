@@ -1,499 +1,679 @@
-/* ==========================================
-   LARGE DESKTOPS / 4K
-========================================== */
+/* ==========================================================
+   4K DISPLAYS
+========================================================== */
 
 @media (min-width:1800px){
 
-  .hero{
-    max-width:1800px;
-    margin:auto;
-  }
+    .hero{
 
-  .hero h1{
-    font-size:10rem;
-  }
+        max-width:1800px;
 
-  .showcase-card{
-    max-width:1600px;
-  }
-
-  .section{
-    max-width:1600px;
-  }
-
-}
-
-
-/* ==========================================
-   LAPTOPS
-========================================== */
-
-@media (max-width:1400px){
-
-  .hero h1{
-    font-size:7rem;
-  }
-
-  .showcase-content{
-    padding:60px;
-  }
-
-}
-
-
-/* ==========================================
-   TABLETS
-========================================== */
-
-@media (max-width:1024px){
-
-  .navbar{
-    padding:18px 25px;
-  }
-
-  .desktop-nav{
-    display:none;
-  }
-
-  .menu-toggle{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-  }
-
-  .menu-toggle span{
-
-    width:24px;
-    height:2px;
-
-    background:#fff;
-
-    transition:.4s;
-  }
-
-  .menu-toggle.active span:nth-child(1){
-    transform:translateY(7px) rotate(45deg);
-  }
-
-  .menu-toggle.active span:nth-child(2){
-    opacity:0;
-  }
-
-  .menu-toggle.active span:nth-child(3){
-    transform:translateY(-7px) rotate(-45deg);
-  }
-
-  .hero{
-    padding:140px 35px 100px;
-  }
-
-  .hero h1{
-    font-size:5.5rem;
-    letter-spacing:-4px;
-  }
-
-  .hero p{
-    font-size:1.15rem;
-  }
-
-  .section{
-    padding:130px 35px;
-  }
-
-  .showcase-card{
-
-    grid-template-columns:1fr;
-    height:auto;
-  }
-
-  .showcase-image{
-    height:420px;
-  }
-
-  .showcase-content{
-    padding:50px;
-  }
-
-  .showcase-content h3{
-    font-size:3rem;
-  }
-
-  .showcase-index{
-    font-size:4rem;
-  }
-
-  .sticky-card-container{
-    height:auto;
-    min-height:100vh;
-  }
-
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-  .hero{
-    padding:130px 24px 80px;
-  }
-
-  .hero h1{
-
-    font-size:3.8rem;
-
-    line-height:.95;
-
-    letter-spacing:-3px;
-  }
-
-  .hero p{
-
-    font-size:1rem;
-
-    line-height:1.8;
-  }
-
-  .hero-buttons{
-
-    flex-direction:column;
-    width:100%;
-  }
-
-  .btn-primary,
-  .btn-secondary{
-
-    width:100%;
-    justify-content:center;
-    text-align:center;
-  }
-
-  .section{
-    padding:110px 24px;
-  }
-
-  .section-header h2,
-  .section-title h2{
-
-    font-size:2.8rem;
-
-    letter-spacing:-2px;
-  }
-
-  .about-content p{
-    font-size:1.05rem;
-  }
-
-  .sticky-card-container{
-
-    padding:20px;
-    top:90px;
-  }
-
-  .showcase-card{
-
-    width:100%;
-    border-radius:24px;
-  }
-
- .showcase-image{
-
-    height:280px;
-    overflow:hidden;
-}
-
-.showcase-image img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    object-position:center;
-}
-
-  .showcase-content{
-    padding:32px;
-  }
-
-  .showcase-index{
-    font-size:3rem;
-  }
-
-  .showcase-content h3{
-    font-size:2.3rem;
-    letter-spacing:-1px;
-  }
-
-  .showcase-content p{
-    font-size:1rem;
-  }
-
-  .contact{
-    padding-top:150px;
-    padding-bottom:150px;
-  }
-
-}
-
-
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width:480px){
-
-  .navbar{
-    padding:16px 18px;
-  }
-
- .logo{
-
-    display:flex;
-    align-items:center;
-
-}
-
-.logo img{
-
-    height:42px;
-    width:auto;
-
-    display:block;
-
-}
-
-  .hero{
-    padding:120px 18px 70px;
-  }
-
-  .hero h1{
-
-    font-size:3rem;
-
-    letter-spacing:-2px;
-  }
-
-  .hero p{
-    font-size:.95rem;
-  }
-
-  .section{
-    padding:90px 18px;
-  }
-
-  .section-header h2,
-  .section-title h2{
-    font-size:2.2rem;
-  }
-
-  .showcase-image{
-    height:260px;
-  }
-
-  .showcase-content{
-    padding:24px;
-  }
-
-  .showcase-content h3{
-    font-size:2rem;
-  }
-
-  .showcase-index{
-    font-size:2.5rem;
-  }
-
-  .footer{
-    padding:60px 18px;
-  }
-
-}
-
-
-/* ==========================================
-   320PX DEVICES
-========================================== */
-
-@media (max-width:360px){
-
-  .hero h1{
-    font-size:2.5rem;
-  }
-
-  .hero p{
-    font-size:.9rem;
-  }
-
-  .showcase-content h3{
-    font-size:1.8rem;
-  }
-
-}
-
-
-/* ==========================================
-   LANDSCAPE PHONES
-========================================== */
-
-@media (max-height:600px){
-
-  .hero{
-    min-height:auto;
-    padding-top:140px;
-    padding-bottom:80px;
-  }
-
-  .sticky-card-container{
-    position:relative;
-    top:0;
-  }
-
-}
-
-
-/* ==========================================
-   TOUCH DEVICES
-========================================== */
-
-@media (hover:none){
-
-  .btn-primary:hover,
-  .btn-secondary:hover,
-  .desktop-nav a:hover{
-
-    transform:none;
-    box-shadow:none;
-  }
-
-  .showcase-card:hover img{
-    transform:none;
-  }
-
-}
-
-
-/* ==========================================
-   MOBILE NAVIGATION
-========================================== */
-
-@media (max-width:1024px){
-
-    .desktop-nav{
-        display:none;
-    }
-
-    .menu-toggle{
-        display:flex;
-    }
-
-    .navbar{
-        padding:18px 20px;
-    }
-
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width:768px){
-    .logo img{
-
-        height:30px;
+        margin:auto;
 
     }
 
-    .footer-logo img{
-        height:45px;
-    }
+    .section{
 
-    .contact h2{
-        font-size:2.5rem !important;
-        line-height:1.1;
-    }
+        max-width:1700px;
 
-    .contact-links a{
-        font-size:1rem;
-        word-break:break-word;
-    }
-
-    .showcase-card{
-        grid-template-columns:1fr;
-        height:auto;
-    }
-
-    .showcase-image{
-        height:280px;
-        overflow:hidden;
-    }
-
-    .showcase-image img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        object-position:center;
     }
 
     .hero h1{
+
+        font-size:10rem;
+
+    }
+
+    .vision-title{
+
+        font-size:7rem;
+
+    }
+
+    .focus-card{
+
+        width:420px;
+
+        height:520px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOPS
+========================================================== */
+
+@media (max-width:1500px){
+
+    .hero h1{
+
+        font-size:7.5rem;
+
+    }
+
+    .section{
+
+        padding:170px 55px;
+
+    }
+
+    .focus-card{
+
+        width:340px;
+
+        height:440px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LAPTOPS
+========================================================== */
+
+@media (max-width:1280px){
+
+    .hero{
+
+        padding:140px 45px;
+
+    }
+
+    .hero h1{
+
+        font-size:6.5rem;
+
+        letter-spacing:-4px;
+
+    }
+
+    .hero p{
+
+        font-size:1.15rem;
+
+    }
+
+    .section{
+
+        padding:150px 45px;
+
+    }
+
+    .vision-title{
+
+        font-size:4.8rem;
+
+    }
+
+    .why-grid{
+
+        gap:25px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+@media (max-width:1024px){
+
+    .navbar{
+
+        padding:18px 25px;
+
+    }
+
+    .desktop-nav{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:5px;
+
+    }
+
+    .menu-toggle span{
+
+        width:26px;
+
+        height:2px;
+
+    }
+
+    .menu-toggle.active span:nth-child(1){
+
+        transform:
+        translateY(7px)
+        rotate(45deg);
+
+    }
+
+    .menu-toggle.active span:nth-child(2){
+
+        opacity:0;
+
+    }
+
+    .menu-toggle.active span:nth-child(3){
+
+        transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+    }
+
+    .hero{
+
+        padding:140px 35px 100px;
+
+    }
+
+    .hero h1{
+
+        font-size:5rem;
+
+        letter-spacing:-3px;
+
+    }
+
+    .hero p{
+
+        font-size:1.1rem;
+
+    }
+
+    .section{
+
+        padding:130px 35px;
+
+    }
+
+    .vision-title{
+
+        font-size:4rem;
+
+    }
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .focus-card{
+
+        width:300px;
+
+        height:400px;
+
+    }
+
+    .about-team h2{
+
+        font-size:3rem;
+
+    }
+
+}
+/* ==========================================================
+   MOBILE DEVICES
+========================================================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding:130px 24px 80px;
+
+        min-height:100vh;
+
+    }
+
+    .hero h1{
+
         font-size:3.8rem;
+
+        line-height:.95;
+
         letter-spacing:-2px;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+        margin-bottom:40px;
+
     }
 
     .hero-buttons{
+
         flex-direction:column;
+
         width:100%;
+
+        gap:15px;
+
     }
 
     .btn-primary,
     .btn-secondary{
+
         width:100%;
+
         text-align:center;
+
+        justify-content:center;
+
     }
 
-}
+    .section{
 
+        padding:110px 24px;
 
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width:480px){
-
-    .footer-logo img{
-        height:38px;
     }
 
-    .hero h1{
+    .section-header h2{
+
+        font-size:2.8rem;
+
+        letter-spacing:-2px;
+
+    }
+
+    .about-content{
+
+        margin-top:50px;
+
+    }
+
+    .about-content p{
+
+        font-size:1rem;
+
+    }
+
+    .focus-intro{
+
+        margin-top:90px;
+
+    }
+
+    .focus-intro h3{
+
+        font-size:2.2rem;
+
+    }
+
+    .focus-carousel{
+
+        margin-top:50px;
+
+    }
+
+    .focus-track{
+
+        gap:18px;
+
+    }
+
+    .focus-card{
+
+        width:280px;
+
+        height:360px;
+
+    }
+
+    .focus-overlay{
+
+        padding:25px;
+
+    }
+
+    .focus-overlay h4{
+
+        font-size:1.5rem;
+
+    }
+
+    .focus-overlay p{
+
+        font-size:.95rem;
+
+        line-height:1.6;
+
+    }
+
+    .about-team{
+
+        margin-top:110px;
+
+    }
+
+    .about-team h2{
+
+        font-size:2.6rem;
+
+    }
+
+    .vision{
+
+        overflow:hidden;
+
+    }
+
+    .vision-title{
+
+        font-size:2.8rem;
+
+        letter-spacing:-2px;
+
+    }
+
+    .vision-content{
+
+        margin-top:50px;
+
+        gap:25px;
+
+    }
+
+    .vision-content p{
+
+        font-size:1rem;
+
+    }
+
+    .vision-highlight{
+
+        font-size:1.4rem !important;
+
+    }
+
+    .why-grid{
+
+        gap:20px;
+
+    }
+
+    .why-card{
+
+        padding:30px;
+
+    }
+
+    .why-number{
+
         font-size:3rem;
+
     }
 
-    .showcase-image{
-        height:240px;
+    .why-card h3{
+
+        font-size:1.6rem;
+
     }
 
-    .contact h2{
-        font-size:2rem !important;
+    .contact{
+
+        padding-bottom:120px;
+
+    }
+
+    .contact-links{
+
+        gap:18px;
+
     }
 
     .contact-links a{
+
+        font-size:1rem;
+
+    }
+
+    .footer{
+
+        margin-top:100px;
+
+        padding:70px 24px;
+
+    }
+
+    .footer h3{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .navbar{
+
+        padding:16px 18px;
+
+    }
+
+    .logo img{
+
+        height:34px;
+
+    }
+
+    .hero{
+
+        padding:120px 18px 70px;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    .section{
+
+        padding:90px 18px;
+
+    }
+
+    .section-header h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .focus-card{
+
+        width:240px;
+
+        height:320px;
+
+    }
+
+    .focus-overlay{
+
+        padding:20px;
+
+    }
+
+    .focus-overlay h4{
+
+        font-size:1.3rem;
+
+    }
+
+    .focus-overlay p{
+
+        font-size:.88rem;
+
+    }
+
+    .about-team h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .vision-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .vision-highlight{
+
+        font-size:1.2rem !important;
+
+    }
+
+    .why-card{
+
+        padding:24px;
+
+    }
+
+    .why-number{
+
+        font-size:2.5rem;
+
+    }
+
+    .why-card h3{
+
+        font-size:1.4rem;
+
+    }
+
+    .footer-logo img{
+
+        height:42px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL DEVICES
+========================================================== */
+
+@media (max-width:360px){
+
+    .hero h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero p{
+
         font-size:.9rem;
+
+    }
+
+    .section-header h2{
+
+        font-size:2rem;
+
+    }
+
+    .vision-title{
+
+        font-size:2rem;
+
+    }
+
+    .focus-card{
+
+        width:210px;
+
+        height:300px;
+
     }
 
 }
 
 
-/* ==========================================
-   REDUCE MOTION
-========================================== */
+/* ==========================================================
+   LANDSCAPE PHONES
+========================================================== */
 
-@media (prefers-reduced-motion: reduce){
+@media (max-height:600px){
 
-    *{
-        animation:none !important;
-        transition:none !important;
-        scroll-behavior:auto !important;
+    .hero{
+
+        min-height:auto;
+
+        padding-top:130px;
+
+        padding-bottom:70px;
+
     }
 
 }
+
+
+/* ==========================================================
+   TOUCH DEVICES
+========================================================== */
+
+@media (hover:none){
+
+    .focus-track{
+
+        animation-play-state:running;
+
+    }
+
+    .focus-card:hover,
+
+    .why-card:hover,
+
+    .btn-primary:hover,
+
+    .btn-secondary:hover{
+
+        transform:none;
+
+        box-shadow:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   END OF RESPONSIVE.CSS
+========================================================== */

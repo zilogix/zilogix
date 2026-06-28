@@ -1,524 +1,161 @@
-/* ==========================================
+/* ==========================================================
    ZILOGIX
    APP.JS
-========================================== */
+========================================================== */
 
+/* ==========================================================
+   PRELOADER
+========================================================== */
 
 window.addEventListener("load", () => {
 
-  const preloader =
-  document.getElementById("preloader");
+    const preloader =
+    document.getElementById("preloader");
 
-  const logo =
-  document.getElementById("preloaderLogo");
+    const logo =
+    document.getElementById("preloaderLogo");
 
-  const target =
-  document.querySelector(".logo");
+    const target =
+    document.querySelector(".logo");
 
-  setTimeout(() => {
- if(!logo || !target || !preloader) return;
-    const start =
-    logo.getBoundingClientRect();
+    if(!preloader || !logo || !target) return;
 
-    const end =
-    target.getBoundingClientRect();
+    setTimeout(() => {
 
-    const x =
-    end.left - start.left;
+        const start =
+        logo.getBoundingClientRect();
 
-    const y =
-    end.top - start.top;
+        const end =
+        target.getBoundingClientRect();
 
-    logo.style.transition =
-    "transform 1.8s cubic-bezier(.22,1,.36,1)";
+        const x =
+        end.left - start.left;
 
-    logo.style.transform =
-    `translate(${x}px,${y}px) scale(.22)`;
+        const y =
+        end.top - start.top;
 
-  },1200);
+        logo.style.transition =
+        "transform 1.8s cubic-bezier(.22,1,.36,1)";
 
+        logo.style.transform =
+        `translate(${x}px,${y}px) scale(.22)`;
 
-  setTimeout(() => {
+    },1200);
 
-    preloader.classList.add("hidden");
+    setTimeout(()=>{
 
-  },3200);
+        preloader.classList.add("hidden");
+
+    },3200);
 
 });
 
 
-/* ==========================================
-   NAVBAR SCROLL EFFECT
-========================================== */
+/* ==========================================================
+   NAVBAR
+========================================================== */
 
-if(navbar){
+const navbar =
+document.getElementById("navbar");
 
-  window.addEventListener(
-    "scroll",
-    () => {
+window.addEventListener("scroll",()=>{
 
-      if(window.scrollY > 50){
+    if(!navbar) return;
+
+    if(window.scrollY > 50){
+
         navbar.classList.add("scrolled");
-      }else{
+
+    }
+
+    else{
+
         navbar.classList.remove("scrolled");
-      }
 
-    },
-    { passive:true }
-  );
+    }
 
-}
+},{passive:true});
 
 
-/* ==========================================
+/* ==========================================================
    MOBILE MENU
-========================================== */
+========================================================== */
 
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuToggle =
+document.getElementById("menuToggle");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
 
 if(menuToggle && mobileMenu){
 
-  menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click",()=>{
 
-    menuToggle.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
 
-  });
+        mobileMenu.classList.toggle("active");
+
+    });
 
 }
 
+document
+.querySelectorAll(".mobile-menu a")
+.forEach(link=>{
 
-const mobileLinks =
-document.querySelectorAll(".mobile-menu a");
+    link.addEventListener("click",()=>{
 
-mobileLinks.forEach(link => {
+        menuToggle.classList.remove("active");
 
-  link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
 
-    menuToggle.classList.remove("active");
-    mobileMenu.classList.remove("active");
-
-  });
+    });
 
 });
 
 
-const seriesData = [
+/* ==========================================================
+   SMOOTH SCROLL
+========================================================== */
 
-{
-  index:"01",
-  title:"SpaceX",
-  image:"assets/series/spacex.png",
-  page:"assets/videoseries/spacex/index.html",
-  description:"The company redefining access to space, launch economics and humanity's future beyond Earth."
-},
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(anchor=>{
 
-{
-  index:"02",
-  title:"Tesla",
-  image:"assets/series/tesla.png",
-  page:"assets/videoseries/tesla/index.html",
-  description:"The company accelerating the world's transition toward sustainable energy and intelligent mobility."
-},
+    anchor.addEventListener("click",(e)=>{
 
-{
-  index:"03",
-  title:"Amazon",
-  image:"assets/series/amazon.png",
-  page:"assets/videoseries/amazon/index.html",
-  description:"A logistics and cloud computing giant reshaping modern commerce."
-},
+        const id =
+        anchor.getAttribute("href");
 
-{
-  index:"04",
-  title:"Apple",
-  image:"assets/series/apple.png",
-  page:"assets/videoseries/apple/index.html",
-  description:"The company that transformed consumer technology through design and ecosystem."
-},
+        if(id==="#") return;
 
-{
-  index:"05",
-  title:"Microsoft",
-  image:"assets/series/microsoft.png",
-  page:"assets/videoseries/microsoft/index.html",
-  description:"Building the infrastructure layer powering enterprise software and AI."
-},
+        const target =
+        document.querySelector(id);
 
-{
-  index:"06",
-  title:"NVIDIA",
-  image:"assets/series/nvidia.png",
-  page:"assets/videoseries/nvidia/index.html",
-  description:"The semiconductor company at the center of the AI revolution."
-},
+        if(!target) return;
 
-{
-  index:"07",
-  title:"OpenAI",
-  image:"assets/series/openai.png",
-  page:"assets/videoseries/openai/index.html",
-  description:"Building frontier artificial intelligence systems for the future."
-}
+        e.preventDefault();
 
-];
-/* ==========================================
-   EXPLORATION DATA
-========================================== */
+        target.scrollIntoView({
 
-const explorationData = [
+            behavior:"smooth",
 
-{
-  index:"01",
-  title:"Geopolitics",
-  image:"assets/explorations/geopolitics.png",
-  page:"assets/videoexploration/geopolitics/index.html",
-  description:"Understanding how nations compete, cooperate and reshape global order."
-},
+            block:"start"
 
-{
-  index:"02",
-  title:"Business Studies",
-  image:"assets/explorations/businessstudies.png",
-  page:"assets/videoexploration/businessstudies/index.html",
-  description:"Breaking down strategy, incentives and corporate power structures."
-},
+        });
 
-{
-  index:"03",
-  title:"Technology Shift",
-  image:"assets/explorations/technologyshift.png",
-  page:"assets/videoexploration/technologyshift/index.html",
-  description:"Analyzing disruptive technologies transforming industries."
-},
+    });
 
-{
-  index:"04",
-  title:"Power Shift",
-  image:"assets/explorations/powershift.png",
-  page:"assets/videoexploration/powershift/index.html",
-  description:"Tracking changes in influence, capital, institutions and nations."
-},
-
-{
-  index:"05",
-  title:"Artificial Intelligence",
-  image:"assets/explorations/artificialintelligence.png",
-  page:"assetes/videoexploration/artificialintelligence/index.html",
-  description:"Understanding frontier AI systems, economics and long-term impact."
-},
-
-{
-  index:"06",
-  title:"Defence",
-  image:"assets/explorations/defence.png",
-  page:"assets/videoexploration/defence/index.html",
-  description:"Studying military technology, deterrence and strategic competition."
-}
-
-];
-
-
-/* ==========================================
-   SERIES ELEMENTS
-========================================== */
-
-const seriesCard =
-document.getElementById("seriesCard");
-
-const seriesIndex =
-document.getElementById("seriesIndex");
-
-const seriesTitle =
-document.getElementById("seriesTitle");
-
-const seriesImage =
-document.getElementById("seriesImage");
-
-const seriesDescription =
-document.getElementById("seriesDescription");
-
-const seriesLink =
-document.getElementById("seriesLink");
-let currentSeries = -1;
-
-/* ==========================================
-   EXPLORATION ELEMENTS
-========================================== */
-
-const explorationCard =
-document.getElementById("explorationCard");
-
-const explorationIndex =
-document.getElementById("explorationIndex");
-
-const explorationTitle =
-document.getElementById("explorationTitle");
-
-const explorationImage =
-document.getElementById("explorationImage");
-
-const explorationDescription =
-document.getElementById("explorationDescription");
-
-const explorationLink =
-document.getElementById("explorationLink");
-
-
-let currentExploration = -1;
-
-
-/* ==========================================
-   AUDIO
-========================================== */
-
-const transitionSound =
-document.getElementById("transitionSound");
-
-let audioUnlocked = false;
-
-function unlockAudio(){
-
-    if(audioUnlocked) return;
-
-    if(!transitionSound) return;
-
-    transitionSound.volume = 0;
-
-    transitionSound.play()
-    .then(()=>{
-
-        transitionSound.pause();
-        transitionSound.currentTime = 0;
-
-        audioUnlocked = true;
-
-    })
-    .catch(()=>{});
-
-}
-
-window.addEventListener(
-"pointerdown",
-unlockAudio,
-{once:true}
-);
-
-function playSound(){
-
-    if(!audioUnlocked) return;
-
-    if(!transitionSound) return;
-
-    transitionSound.pause();
-
-    transitionSound.currentTime = 0;
-
-    transitionSound.volume = 0.2;
-
-    transitionSound.play()
-    .catch(()=>{});
-
-}
-
-/* ==========================================
-   UPDATE SERIES
-========================================== */
-
-
-function updateSeries(index){
-
-  if(index === currentSeries) return;
-    if(
-    !seriesCard ||
-    !seriesIndex ||
-    !seriesTitle ||
-    !seriesDescription
-  ){
-    return;
-  }
-
-  currentSeries = index;
-
-  const item = seriesData[index];
-
-  seriesCard.classList.add("card-changing");
-
-  setTimeout(() => {
-
-    seriesIndex.textContent =
-    item.index;
-
-    seriesTitle.textContent =
-    item.title;
-
-    seriesDescription.textContent =
-    item.description;
-
-    seriesImage.src =
-    item.image;
-    if(seriesLink && item.page){
-  seriesLink.href = item.page;
-}
-
-    seriesCard.classList.remove("card-changing");
-    seriesCard.classList.add("card-enter");
-
-    setTimeout(() => {
-      seriesCard.classList.remove("card-enter");
-    }, 700);
-
-  }, 200);
-
-  playSound();
-}
-
-
-/* ==========================================
-   UPDATE EXPLORATION
-========================================== */
-
-function updateExploration(index){
-
-  if(index === currentExploration) return;
-  if(
-  !explorationCard ||
-  !explorationIndex ||
-  !explorationTitle ||
-  !explorationDescription ||
-  !explorationImage
-){
-  return;
-}
-
-  currentExploration = index;
-
-  const item = explorationData[index];
-
-  explorationCard.classList.add("card-changing");
-
-  setTimeout(() => {
-
-    explorationIndex.textContent =
-    item.index;
-
-    explorationTitle.textContent =
-    item.title;
-
-   explorationDescription.textContent =
-item.description;
-explorationImage.src =
-item.image;
-
-/* UPDATE IMAGE */
-explorationImage.src =
-item.image;
-
-/* UPDATE PAGE LINK */
-if(explorationLink && item.page){
-
-  explorationLink.href =
-  item.page;
-
-}
-
-    explorationCard.classList.remove("card-changing");
-    explorationCard.classList.add("card-enter");
-
-    setTimeout(() => {
-      explorationCard.classList.remove("card-enter");
-    }, 700);
-
-  }, 200);
-
-  playSound();
-}
-
-
-/* ==========================================
-   INTERSECTION OBSERVER
-========================================== */
-
-const seriesSteps =
-document.querySelectorAll(".scroll-step");
-
-const explorationSteps =
-document.querySelectorAll(".exploration-step");
-
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
-
-  entries.forEach(entry => {
-
-    if(entry.isIntersecting){
-
-      const index =
-      Number(
-      entry.target.dataset.series
-      );
-
-      updateSeries(index);
-    }
-
-  });
-
-},
-
-{
-  threshold:.55
-}
-
-);
-
-
-seriesSteps.forEach(step => {
-  observer.observe(step);
 });
-
-
-const explorationObserver =
-new IntersectionObserver(
-
-(entries)=>{
-
-  entries.forEach(entry => {
-
-    if(entry.isIntersecting){
-
-      const index =
-      Number(
-      entry.target.dataset.exploration
-      );
-
-      updateExploration(index);
-    }
-
-  });
-
-},
-
-{
-  threshold:.55
-}
-
-);
-
-
-explorationSteps.forEach(step => {
-  explorationObserver.observe(step);
-});
-
-
-/* ==========================================
+/* ==========================================================
    REVEAL ANIMATION
-========================================== */
+========================================================== */
 
 const revealElements =
 document.querySelectorAll(
-".section,.showcase-card,.footer"
+
+".section,.why-card,.focus-card,.footer"
+
 );
 
 const revealObserver =
@@ -526,90 +163,341 @@ new IntersectionObserver(
 
 (entries)=>{
 
-  entries.forEach(entry => {
+entries.forEach(entry=>{
 
-    if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-      entry.target.classList.add(
-      "active"
-      );
+entry.target.classList.add("active");
 
-    }
+}
 
-  });
+});
 
 },
 
 {
-  threshold:.15
+
+threshold:.15
+
 }
 
 );
 
+revealElements.forEach(el=>{
 
-revealElements.forEach(el => {
+el.classList.add("reveal");
 
-  el.classList.add("reveal");
-
-  revealObserver.observe(el);
+revealObserver.observe(el);
 
 });
 
 
-/* ==========================================
-   IMAGE PARALLAX
-========================================== */
+/* ==========================================================
+   FOCUS AREA AUTO CAROUSEL
+========================================================== */
 
-const parallaxImages =
-document.querySelectorAll(
-".showcase-image img"
+const carousel =
+document.querySelector(".focus-track");
+
+const carouselWrapper =
+document.querySelector(".focus-carousel");
+
+let animationPaused = false;
+
+if(carousel && carouselWrapper){
+
+carouselWrapper.addEventListener("mouseenter",()=>{
+
+animationPaused = true;
+
+carousel.style.animationPlayState = "paused";
+
+});
+
+carouselWrapper.addEventListener("mouseleave",()=>{
+
+animationPaused = false;
+
+carousel.style.animationPlayState = "running";
+
+});
+
+}
+
+
+/* ==========================================================
+   TOUCH SUPPORT
+========================================================== */
+
+let startX = 0;
+
+let currentTranslate = 0;
+
+if(carouselWrapper){
+
+carouselWrapper.addEventListener(
+
+"touchstart",
+
+e=>{
+
+startX = e.touches[0].clientX;
+
+},
+
+{passive:true}
+
 );
+
+carouselWrapper.addEventListener(
+
+"touchmove",
+
+e=>{
+
+const moveX =
+
+e.touches[0].clientX;
+
+const distance =
+
+moveX - startX;
+
+carousel.style.transform =
+
+`translateX(${currentTranslate + distance}px)`;
+
+},
+
+{passive:true}
+
+);
+
+carouselWrapper.addEventListener(
+
+"touchend",
+
+()=>{
+
+carousel.style.transition =
+
+".5s ease";
+
+carousel.style.transform =
+
+"";
+
+setTimeout(()=>{
+
+carousel.style.transition =
+
+"";
+
+},500);
+
+},
+
+{passive:true}
+
+);
+
+}
+
+
+/* ==========================================================
+   HERO PARALLAX
+========================================================== */
+
+const hero =
+document.querySelector(".hero");
+
+const glowOne =
+document.querySelector(".hero-glow-1");
+
+const glowTwo =
+document.querySelector(".hero-glow-2");
 
 let ticking = false;
 
-function updateParallax(){
+function updateHero(){
 
-  parallaxImages.forEach(img => {
+const scroll = window.scrollY;
 
-    const rect =
-    img.getBoundingClientRect();
+if(glowOne){
 
-    const offset =
-    rect.top * -0.04;
+glowOne.style.transform =
 
-    img.style.transform =
-    `translateY(${offset}px) scale(1.05)`;
+`translateY(${scroll*.08}px)`;
 
-  });
+}
 
-  ticking = false;
+if(glowTwo){
+
+glowTwo.style.transform =
+
+`translateY(${scroll*.12}px)`;
+
+}
+
+ticking = false;
+
 }
 
 window.addEventListener(
-  "scroll",
-  () => {
 
-    if(!ticking){
+"scroll",
 
-      requestAnimationFrame(
-      updateParallax
-      );
+()=>{
 
-      ticking = true;
-    }
+if(!ticking){
 
-  },
-  { passive:true }
+requestAnimationFrame(updateHero);
+
+ticking = true;
+
+}
+
+},
+
+{passive:true}
+
 );
 
 
-/* ==========================================
-   INITIAL LOAD
-========================================== */
+/* ==========================================================
+   ACTIVE NAVIGATION
+========================================================== */
 
-updateSeries(0);
-updateExploration(0);
+const sections =
+document.querySelectorAll("section[id]");
+
+const navLinks =
+document.querySelectorAll(
+
+".desktop-nav a,.mobile-menu a"
+
+);
+
+const navObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(!entry.isIntersecting) return;
+
+const id =
+
+entry.target.getAttribute("id");
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(
+
+link.getAttribute("href")==="#"+id
+
+){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+},
+
+{
+
+threshold:.45
+
+}
+
+);
+
+sections.forEach(section=>{
+
+navObserver.observe(section);
+
+});
+
+
+/* ==========================================================
+   LAZY IMAGE FADE
+========================================================== */
+
+const lazyImages =
+document.querySelectorAll(
+
+".focus-card img"
+
+);
+
+const imageObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("loaded");
+
+imageObserver.unobserve(
+
+entry.target
+
+);
+
+}
+
+});
+
+});
+
+lazyImages.forEach(img=>{
+
+imageObserver.observe(img);
+
+});
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+window.addEventListener(
+
+"pageshow",
+
+()=>{
+
+document.body.classList.add("loaded");
+
+}
+
+);
+
+
+/* ==========================================================
+   CONSOLE
+========================================================== */
 
 console.log(
-"ZILOGIX Intelligence Platform Loaded"
+
+"%cZILOGIX Intelligence Platform",
+
+"color:white;font-size:18px;font-weight:bold;"
+
+);
+
+console.log(
+
+"Website Loaded Successfully"
+
 );

@@ -1,0 +1,9 @@
+# ==========================================
+# ZILOGIX ROBOTS
+# ==========================================
+
+User-agent: *
+
+Allow: /
+
+Sitemap: https://zilogix.in/sitemap.xml
